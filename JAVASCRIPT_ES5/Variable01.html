@@ -11,12 +11,14 @@
             -자스에서는 변수에 넣은 값에 따라 그 변수의 자료형이 결정된다.
             -변수 선언:var라는 키워드 사용
         */
-       //1. 변수선언
+       
+        //1. 변수선언
         var num;
         document.write('<h2>초기화 전</h2>');
         //바디영역에 저렇게 출력됨
         document.write('num의 자료형 : ' + typeof(num)+', num에 저장된 값 : '+num);
         //undefined는 하나의 자료형이자 값이다.(변수 선언 후 초기화 전)
+       
         //2. 변수 초기화
         num = 100;
         document.write('<h2>초기화 후</h2>');
@@ -27,10 +29,12 @@
         document.write('<br/>num의 자료형 : ' + typeof(num)+', num에 저장된 값 : '+num);
         num = "뚱인데요.";  //자스에서는 문자열을 나타내기위해 ''나 ""를 사용한다.
         document.write('<br/>num의 자료형 : ' + typeof(num)+', num에 저장된 값 : '+num);
+        
         //3. 변수선언과 동시에 초기화
         document.write('<h2>선언과 동시에 초기화</h2>');
         var str = "자바스크립트";
         document.write('<h2>콤마(,)로 구분해서 동시에 변수 여러개</h2>');
+        
         //4. 여러개의 변수를 콤마(,)로 구분해서 동시 선언 및 초기화
         var num1=10,num2,str1 = '자스',str2;
         //undefined+숫자 = NaN(Not a Number)도 하나의 값이고 number타입이다.
