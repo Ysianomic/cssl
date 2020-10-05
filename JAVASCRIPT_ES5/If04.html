@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If04.html</title>
+    <script>
+        /*
+        if(비교식이나 논리식뿐 아니라 모든식 혹은 모든값이 올수있다.)
+        자바에서는 true아니면 false를 판단 할 수있는 비교식이거나
+        논리식이 와야한다.(산술식(x))
+        자스에서는 모든 식이 가능하다.
+        0이나 null그리고 false이외의 모든 값은 true로 판단하기 때문이다.
+        */
+        var nullvar = null,num1 = num2 = 10;
+        if(nullvar) document.write('null은 true다.<br/>');
+        else document.write('null은 false다<br/>');
+
+        if(num1-num2)//자바x 자스는 가능
+            document.write('num1-num2은 true다.<br/>');
+        else document.write('num1-num2은 false다<br/>');
+
+
+        /*
+        자바와는 다르게 판단식(모든식)이 참이거나 거짓일때 결과값을
+        변수에 담지 않아도됨
+
+        방식1.
+        //자바에서는 에러
+        판단식 ? 참일때 실행할 문장: 거짓일때 실행할 문장;
+        방식2.
+        var 변수 = 판단식 ? 참일때 값:거짓일때 값;
+        */
+        
+        //방식1 .자바x
+        num1>num2? document.write(num1+'은' + num2 +'보다크다.<br/>'): document.write('거짓입니다.<br/>');
+        //방식2. 자바o
+        var result = num1>num2? document.write(num1+'은' + num2 +'보다크다.<br/>'): document.write('거짓입니다.<br/>');
+        document.write(result);
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>성적 출력</legend>
+        국어 <input type="text" id="kor"/>
+        영어 <input type="text" id="eng"/>
+        수학 <input type="text" id="math"/>
+        <span id="span" style="color: red; font-weight: bold;">여기에 출력</span>
+        <button onclick="getGrade()">확인</button>
+    </fieldset>
+    <script>
+        //입력점수얻기
+        var korInput = parseInt(document.getElementById('kor'));
+        var engInput = parseInt(document.getElementById('eng'));
+        var mathInput = parseInt(document.getElementById('math'));
+        //span태그(요소)객체 얻기
+        var span = document.getElementById('span');
+        
+        function getGrade(){
+            //평균구하기
+            var kor = parseInt(korInput.value);
+            var eng = parseInt(engInput.value);
+            var math = parseInt(mathInput.value);
+
+            var avg = (kor+eng+math)/3;
+            //document.write(typeof avg);
+            if(avg>=90) span.innerHTML = 'A';
+            else if(avg>=80) span.innerHTML = 'B';
+            else if(avg>=70) span.innerHTML = 'C';
+            else span.innerHTML = 'D';
+            span.innerHTML +=':' + avg;
+        }
+
+
+    </script>
+</body>
+</html>
